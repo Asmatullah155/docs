@@ -1,5 +1,18 @@
 ## EVM
+pragma solidity 0.8.26;
 
+import "@zetachain/protocol-contracts/contracts/zevm/interfaces/UniversalContract.sol";
+
+contract UniversalApp is UniversalContract {
+    function onCall(
+        MessageContext calldata context,
+        address zrc20,
+        uint256 amount,
+        bytes calldata message
+    ) external virtual override {
+        // ...
+    }
+}
 | Feature                            | Mainnet | Testnet | E2E | Localnet |
 | :--------------------------------- | :------ | :------ | :-- | :------- |
 | Deposit/withdraw native coin       | ✅      | ✅      | ✅  | ✅       |
